@@ -1,5 +1,5 @@
-package computo;
+    package computo;
 
-public interface Task<T> {
-    T execute();
-}
+    public interface Task<T> {
+        T execute();
+    }
