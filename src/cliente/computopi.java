@@ -7,12 +7,13 @@ import computo.computo;
 
 public class computopi {
     public static void main(String args[]) {
-        // Security Manager ya no es necesario en Java moderno
         try {
             String name = "computo";
-            Registry registry = LocateRegistry.getRegistry(args[0]);
+            String host = args[0];
+            int port = Integer.parseInt(args[1]);
+            Registry registry = LocateRegistry.getRegistry(host, port);
             computo comp = (computo) registry.lookup(name);
-            Pi task = new Pi(Integer.parseInt(args[1]));
+            Pi task = new Pi(Integer.parseInt(args[2]));
             BigDecimal pi = comp.executeTask(task);
             System.out.println(pi);
         } catch (Exception e) {
