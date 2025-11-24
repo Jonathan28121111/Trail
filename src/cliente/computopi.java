@@ -1,4 +1,4 @@
-package client;
+package cliente;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -7,9 +7,6 @@ import computo.computo;
 
 public class computopi {
     public static void main(String args[]) {
-        if (System.getSecurityManager() == null) {
-            System.setSecurityManager(new SecurityManager());
-        }
         try {
             String name = "computo";
             Registry registry = LocateRegistry.getRegistry(args[0]);

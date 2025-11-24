@@ -18,12 +18,9 @@ public class computoadmin implements computo {
     }
 
     public static void main(String[] args) {
-        if (System.getSecurityManager() == null) {
-            System.setSecurityManager(new SecurityManager());
-        }
         try {
             String name = "computo";
-            computo admin = new admin();
+            computo admin = new computoadmin();
             computo stub =
                 (computo) UnicastRemoteObject.exportObject(admin, 0);
             Registry registry = LocateRegistry.getRegistry();
